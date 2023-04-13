@@ -15,7 +15,4 @@ def solution(x_success: int,
   se = np.sqrt((test_conv*(1-test_conv)/y_cnt)+(control_conv*(1-control_conv)/x_cnt))
   z_score = dev / se
   p_val = 2*(1-norm.cdf(abs(z_score)))
-  if p_val < 0.03:
-  return True
-  else:
-  return False
+  return p_val < 0.03
